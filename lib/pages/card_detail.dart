@@ -7,13 +7,21 @@ class CardDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+    return Hero(
+      tag: cardDetail.id,
+      child: Scaffold(
+          //appBar: AppBar(),
+          body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        child: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(Icons.close)),
               Row(
                 children: [
                   Image.network(
@@ -29,12 +37,16 @@ class CardDetailPage extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 25),
-              Text(
-                cardDetail.text,
-                textAlign: TextAlign.center,
+              Expanded(
+                child: Text(
+                  cardDetail.text,
+                  textAlign: TextAlign.center,
+                ),
               ),
             ],
           ),
-        ));
+        ),
+      )),
+    );
   }
 }
