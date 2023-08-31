@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loginapp/pages/card_page.dart';
 import 'package:loginapp/pages/pageview_2.dart';
+import 'package:loginapp/pages/tarefa_page.dart';
 import 'package:loginapp/shared/widgets/custom_drawer.dart';
 
 class MainPage extends StatefulWidget {
@@ -35,6 +36,7 @@ class _MainPageState extends State<MainPage> {
                 children: const [
                   CardPage(),
                   PageView2(),
+                  TarefaPage(),
                 ]),
           ),
           BottomNavigationBar(
@@ -45,9 +47,9 @@ class _MainPageState extends State<MainPage> {
               items: const [
                 BottomNavigationBarItem(label: 'Home', icon: Icon(Icons.home)),
                 BottomNavigationBarItem(
-                    label: 'Criar Formulario', icon: Icon(Icons.add)),
+                    label: 'Lista Img', icon: Icon(Icons.image)),
                 BottomNavigationBarItem(
-                    label: 'Pag3', icon: Icon(Icons.delete)),
+                    label: 'Tarefas', icon: Icon(Icons.task)),
               ])
         ],
       ),
